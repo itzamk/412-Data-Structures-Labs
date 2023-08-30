@@ -1,3 +1,10 @@
+'''
+Andrew Kozempel
+CMPSC 412
+Lab 1
+Fall 2023
+'''
+
 import time
 import random
 
