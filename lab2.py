@@ -15,6 +15,24 @@ class Vector:
         # Extend the array to the initial capacity with default values
         self._data.extend([0.0, 0.0])
 
+    # Prints vector
+    def __str__(self):
+
+        # Initialize result string
+        result = "["
+
+        # Add elements to result
+        for i in range(self._size):
+            result += str(self._data[i])
+
+            # If not the last element, add a comma and space
+            if i != self._size - 1:  
+                result += ", "
+
+        # Finish result and return
+        result += "]"
+        return result
+
     # Return the number of items in the vector
     def length(self):
         return self._size
@@ -147,7 +165,7 @@ class Vector:
         
         # Print error
         else:
-            ("Index out of range")
+            print("Index out of range")
 
     # Resize the array to a new capacity
     def resize(self, new_capacity):
@@ -167,11 +185,72 @@ class Vector:
         # Set new capacity
         self._capacity = new_capacity
 
-# Example usage:
-v = Vector()
-v.append(1.0)
-v.append(2.0)
-v.setitem(2, 3.0)
-print(v.getitem(0))  # 1.0
-print(v.getitem(1))  # 2.0
-print(v.getitem(2))  # 3.0
+# Initialize the Vector
+# Expected Output: []
+test = Vector()
+print("\nAfter initialization:", test)  
+
+# Testing length()
+# Expected Output: 0
+print("\nVector:", test)
+print("Length of vector:", test.length())  
+
+# Testing contains()
+# Expected Output: False
+print("\nVector:", test)
+print("Contains 1.0:", test.contains(1.0))
+
+# Testing append()
+# Expected Output: [1.0]
+print("\nBefore appending 1.0:", test)
+test.append(1.0) 
+print("After appending 1.0:", test)
+print("Length of vector:", test.length())
+print("Contains 1.0:", test.contains(1.0))
+
+# Testing getitem()
+# Expected Output: 1.0
+print("\nVector:", test)
+print("Item at index 0:", test.getitem(0))
+
+# Testing setitem()
+# Expected Output: [1.0, 2.0]
+print("\nBefore setting item at index 1 to 2.0:", test)
+test.setitem(1, 2.0)
+print("After setting item at index 1 to 2.0:", test)
+
+# Testing insert()
+# Expected Output: [1.0, 1.5, 2.0]
+print("\nBefore inserting 1.5 at index 1:", test)
+test.insert(1, 1.5)
+print("After inserting 1.5 at index 1:", test)
+
+# Testing remove()
+# Expected Output: 1.5
+# Expected Output: [1.0, 2.0]
+print("\nBefore removing item at index 1:", test)  
+removed = test.remove(1)
+print(f"Removed item at index 1: {removed}")
+print("After removing item at index 1:", test)  
+
+# Testing indexOf()
+# # Expected Output: 1
+print("\nVector:", test)
+index = test.indexOf(2.0)
+print(f"Index of 2.0: {index}")
+
+# Testing extend()
+# Expected Output: [1.0, 2.0, 3.0, 4.0]
+test2 = Vector()
+test2.append(3.0)
+test2.append(4.0)
+print("\nVector to be added:", test2)
+print("Before extending with another vector:", test)
+test.extend(test2)
+print("After extending with another vector:", test)
+
+# Testing subVector()
+# Expected Output: [2.0, 3.0, 4.0]
+print("\nVector:", test)
+sub_test = test.subVector(1, 3)
+print("Subvector from index 1 to 3:", sub_test)
