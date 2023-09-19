@@ -30,7 +30,7 @@ class QueueStacks:
             while self.stackA:
 
                 # transfer top element of stackA to stackB
-                # reverse the order (FILO -> FIFO)
+                # reverse the order (LIFO -> FIFO)
                 self.stackB.append(self.stackA.pop())
 
         # if stackB is empty, return nothing
@@ -59,7 +59,7 @@ def isValid(test):
         if char in pairs.keys():
             p_stack.append(char)
 
-        # if closing bracket                               TEST 4: '[(])'
+        # if closing bracket
         else:
 
             # if stack is empty, False
