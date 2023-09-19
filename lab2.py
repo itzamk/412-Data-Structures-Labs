@@ -56,15 +56,10 @@ class Vector:
     def setitem(self, ndx, item):
         
         # If index is valid
-        if 0 <= ndx <= self._size:
-            
-            # If past the last item, append
-            if ndx == self._size:  
-                self.append(item)
+        if 0 <= ndx < self._size:
 
             # Set if index is valid
-            else:
-                self._data[ndx] = item
+            self._data[ndx] = item
 
         # Print error        
         else:
@@ -215,9 +210,9 @@ print("Item at index 0:", test.getitem(0))
 
 # Testing setitem()
 # Expected Output: [1.0, 2.0]
-print("\nBefore setting item at index 1 to 2.0:", test)
-test.setitem(1, 2.0)
-print("After setting item at index 1 to 2.0:", test)
+print("\nBefore setting item at index 0 to 2.0:", test)
+test.setitem(0, 2.0)
+print("After setting item at index 0 to 2.0:", test)
 
 # Testing insert()
 # Expected Output: [1.0, 1.5, 2.0]
