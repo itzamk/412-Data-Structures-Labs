@@ -1,7 +1,7 @@
 '''
 Andrew Kozempel
 CMPSC 412
-Lab 1
+Lab 3
 Fall 2023
 '''
 
@@ -30,7 +30,7 @@ class QueueStacks:
             while self.stackA:
 
                 # transfer top element of stackA to stackB
-                # reverse the order (LIFO -> FIFO)
+                # reverse the order (FILO -> FIFO)
                 self.stackB.append(self.stackA.pop())
 
         # if stackB is empty, return nothing
@@ -59,7 +59,7 @@ def isValid(test):
         if char in pairs.keys():
             p_stack.append(char)
 
-        # if closing bracket
+        # if closing bracket                               TEST 4: '[(])'
         else:
 
             # if stack is empty, False
