@@ -20,10 +20,10 @@ def binary_search(lst):
     right = len(lst) - 1
 
     # flag for answer found
-    answer = False
+    flag = False
     
     # while loop until target is found
-    while answer == False:
+    while flag == False:
 
         # calculate mid index
         mid = (left + right) // 2
@@ -34,7 +34,7 @@ def binary_search(lst):
         # if mid index is target, return index
         if answer == 3:
             return lst[mid]
-            answer = True
+            flag = True
         
         # search right half if greater than guess
         elif answer == 2:
