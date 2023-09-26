@@ -30,6 +30,7 @@ def binary_search(lst):
 
         # if mid index is target, return index
         if answer == 3:
+            print(f'Your number is {lst[mid]}.')
             return lst[mid]
         
         # search right half if greater than guess
@@ -49,7 +50,7 @@ def generate_ints(quantity, int_list):
 
 test_list = []
 
-generate_ints(10000,test_list)
+generate_ints(10000, test_list)
 
 test_list.sort()
 print(len(test_list))
