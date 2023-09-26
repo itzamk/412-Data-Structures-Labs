@@ -18,23 +18,19 @@ def binary_search(lst):
     # assign left and right indices
     left = 0
     right = len(lst) - 1
-
-    # flag for answer found
-    flag = False
     
     # while loop until target is found
-    while flag == False:
+    while left <= right:
 
         # calculate mid index
         mid = (left + right) // 2
 
         # answer to less than or greater than
-        answer = input(f'Is your number less than (1), greater than (2), or equal to (3) {lst[mid]}?')
+        answer = int(input(f'Is your number less than (1), greater than (2), or equal to (3) {lst[mid]}?'))
 
         # if mid index is target, return index
         if answer == 3:
             return lst[mid]
-            flag = True
         
         # search right half if greater than guess
         elif answer == 2:
@@ -43,7 +39,6 @@ def binary_search(lst):
         # search left half if less than guess
         else:
             right = mid - 1
-
 
 def generate_ints(quantity, int_list):
     
@@ -54,7 +49,7 @@ def generate_ints(quantity, int_list):
 
 test_list = []
 
-generate_ints(500,test_list)
+generate_ints(10000,test_list)
 
 test_list.sort()
 print(len(test_list))
