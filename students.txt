@@ -1,21 +1,20 @@
-Student ID,first name,last name,email id,Major
-7001,John,Doe,johndoe@email.com,Computer Science
-1042,Jane,Smith,janesmith@email.com,Mathematics
-1204,Robert,Brown,robertbrown@email.com,Physics
-1004,Linda,Johnson,lindajohnson@email.com,Chemistry
-1075,Michael,Williams,michaelwilliams@email.com,Biology
-1506,Elizabeth,Jones,elizabethjones@email.com,History
-1007,James,Miller,jamesmiller@email.com,Geography
-1008,Jennifer,Davis,jenniferdavis@email.com,English
-2089,William,Garcia,williamgarcia@email.com,Philosophy
-5010,Patricia,Rodriguez,patriciarodriguez@email.com,Psychology
-0451,David,Martinez,davidmartinez@email.com,Engineering
-1012,Mary,Hernandez,maryhernandez@email.com,Art
-1423,Joseph,Lopez,josephlopez@email.com,Music
-1014,Barbara,Gonzalez,barbaragonzalez@email.com,Theatre
-1015,Thomas,Anderson,thomasanderson@email.com,Medicine
-1016,Susan,Wilson,susanwilson@email.com,Pharmacy
-2017,Charles,Taylor,charlestaylor@email.com,Law
-1018,Margaret,Moore,margaretmoore@email.com,Architecture
-2019,Andrew,White,andrewwhite@email.com,Design
-1020,Sarah,Lee,sarahlee@email.com,Journalism
+923329936 Jack Silver jsilver@psu.edu Law
+923329941 Olivia Green ogreen@psu.edu Journalism
+923329932 Frank Gray fgray@psu.edu Business
+923329933 Grace Pink gpink@psu.edu Philosophy
+923329931 Ellie Black eblack@psu.edu Economics
+923329939 Mia Indigo mindigo@psu.edu Sociology
+923329937 Karen Yellow kyellow@psu.edu Architecture
+923329934 Harry Teal hteal@psu.edu Engineering
+923329928 Alice Blue ablue@psu.edu Chemistry
+923329930 David Red dred@psu.edu Art
+923329942 Paul Orange porange@psu.edu Geology
+923329935 Ivy Gold igold@psu.edu Medicine
+923329929 Charlie Green cgreen@psu.edu History
+923329938 Leo Violet lviolet@psu.edu Psychology
+923329924 John Doe jdoe@psu.edu Mathematics
+923329925 Jane Smith jsmith@psu.edu Physics
+923329923 Jake Ryan jryan@psu.edu ComputerScience
+923329926 Amy Brown abrown@psu.edu English
+923329927 Bob White bwhite@psu.edu Biology
+923329940 Nick Maroon nmaroon@psu.edu Anthropology
