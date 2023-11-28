@@ -67,9 +67,9 @@ class BinarySearchTree:
 
         if node:
 
-            self.Inorder(node.left)
+            self.print(node.left)
             print(node.val, '-> ', end = '')
-            self.Inorder(node.right)
+            self.print(node.right)
 
     def find(self, val):
 
@@ -250,15 +250,6 @@ class LinkedList:
             current = current.next
 
 def generate_ints(quantity):
-    
-    # lst = []
-
-    # # loop "quantity" times
-    # for _ in range(quantity):
-
-    #     rand = random.randint(1,10000) # generate random int
-
-    #     lst.append(rand)
 
     return [random.randint(1,10000) for _ in range(quantity)]
 
@@ -268,18 +259,143 @@ random_ints = generate_ints(25000)
 
 test_list = []
 
-list_start = time.time()
 for ele in random_ints:
     test_list.append(ele)
-
-print(f'Populating list time: {time.time()-list_start:.5f} seconds')
 
 # dict
 
 test_dict = {}
 
 for ele in random_ints:
-    test_dict[ele] = len(test_dict)
+    test_dict[len(test_dict)] = ele
 
 # BST
-# linked list
+
+test_BST = BinarySearchTree()
+
+for ele in random_ints:
+    test_BST.insert(ele)
+
+# LL
+
+test_LL = LinkedList()
+
+for ele in random_ints:
+    test_LL.insert(ele)
+
+### PRINT
+
+# list 
+start_time = time.time()
+print(test_list)
+print_list_time = time.time() - start_time
+
+# dict
+start_time = time.time()
+print(test_dict)
+print_dict_time = time.time() - start_time
+
+# bst
+start_time = time.time()
+test_BST.print(test_BST.root)
+print_BST_time = time.time() - start_time
+
+# LL
+start_time = time.time()
+test_LL.print()
+print_LL_time = time.time() - start_time
+
+print(f'\nPrinting list time: {print_list_time:.5f} seconds')
+print(f'Printing dict time: {print_dict_time:.5f} seconds')
+print(f'Printing BST time: {print_BST_time:.5f} seconds')
+print(f'Printing LL time: {print_LL_time:.5f} seconds')
+
+### RETRIEVAL
+
+random_value = random.choice(random_ints)
+
+# list 
+start_time = time.time()
+found_in_list = random_value in test_list
+ret_list_time = time.time() - start_time
+
+# dict
+start_time = time.time()
+found_in_dict = random_value in test_dict.values()
+ret_dict_time = time.time() - start_time
+
+# bst
+start_time = time.time()
+found_in_BST, _, _ = test_BST.find(random_value)
+ret_BST_time = time.time() - start_time
+
+# LL
+start_time = time.time()
+found_in_LL = test_LL.find(random_value)
+ret_LL_time = time.time() - start_time
+
+print(f'\nRetrieval from list time: {ret_list_time:.5f} seconds')
+print(f'Retrieval from dict time: {ret_dict_time:.5f} seconds')
+print(f'Retrieval from BST time: {ret_BST_time:.5f} seconds')
+print(f'Retrieval from LL time: {ret_LL_time:.5f} seconds')
+
+### INSERTION
+
+new_random_value = random.randint(1, 10000)
+
+# list 
+start_time = time.time()
+test_list.append(new_random_value)
+insert_list_time = time.time() - start_time
+
+# dict
+start_time = time.time()
+test_dict[len(test_dict)] = new_random_value
+insert_dict_time = time.time() - start_time
+
+# bst
+start_time = time.time()
+test_BST.insert(new_random_value)
+insert_BST_time = time.time() - start_time
+
+# LL
+start_time = time.time()
+test_LL.insert(new_random_value)
+insert_LL_time = time.time() - start_time
+
+print(f'\nInsert into list time: {insert_list_time:.5f} seconds')
+print(f'Insert into dict time: {insert_dict_time:.5f} seconds')
+print(f'Insert into BST time: {insert_BST_time:.5f} seconds')
+print(f'Insert into LL time: {insert_LL_time:.5f} seconds')
+
+### DELETION
+
+delete_random_value = random.choice(random_ints)
+
+# list 
+start_time = time.time()
+#test_list.remove(delete_random_value)
+delete_list_time = time.time() - start_time
+
+# dict
+start_time = time.time()
+
+# delete first key seen if value is found
+def delete_from_dict():
+    for key, val in test_dict.items():
+
+        if val == delete_random_value:
+            del test_dict[key]
+            break
+
+delete_dict_time = time.time() - start_time
+
+# bst
+start_time = time.time()
+test_BST.delete(delete_random_value)
+delete_BST_time = time.time() - start_time
+
+print(f'\nDelete from list time: {timeit.timeit(lambda: test_list.remove(delete_random_value), number=1):.5f} seconds')
+print(f'Delete from dict time: {timeit.timeit(lambda: delete_from_dict(), number=1):.5f} seconds')
+print(f'Delete from BST time: {timeit.timeit(lambda: test_BST.delete(delete_random_value), number=1):.5f} seconds')
+print(f'Delete from LL time: {timeit.timeit(lambda: test_LL.delete(delete_random_value), number=1):.5f} seconds')
